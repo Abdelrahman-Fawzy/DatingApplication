@@ -11,6 +11,14 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/errors" routerLinkActive="active">errors</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto" *ngIf="(currentUser$ | async) === null">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/errors" routerLinkActive="active">errors</a>
+      </li>
     </ul>
     <ng-container *ngIf="(currentUser$ | async) === null">
       <form #Loginform="ngForm" (ngSubmit)="Submit()" #form="ngForm" class="form-inline mt-2 mt-md-0">

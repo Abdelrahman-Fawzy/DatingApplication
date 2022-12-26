@@ -1,3 +1,4 @@
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
@@ -6,6 +7,8 @@ import { MembersListComponent } from './members/members-list/members-list.compon
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorsComponent } from './errors/errors.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,7 +23,10 @@ const routes: Routes = [
       {path: 'messages', component: MessagesComponent},
     ]
   },
-  {path: '**', component: HomeComponent, pathMatch: 'full'}
+  {path: 'errors', component: ErrorsComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
+  {path: '**', component: NotFoundComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
