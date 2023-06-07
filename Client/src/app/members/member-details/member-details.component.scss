@@ -1,0 +1,49 @@
+.card-img-top {
+  width: 85%;
+  height: 85%;
+  margin: 30px auto;
+}
+
+.card-body {
+  padding: 0 30px;
+}
+
+.card-footer {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px 0px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.tab {
+  border-bottom: 1px solid #eee;
+}
+.tablinks {
+  background-color: transparent;
+  border: none;
+  color: #e95420;
+  padding: 10px;
+  &.active {
+    color: #000;
+    border-bottom: 2px solid #e95420;
+  }
+}
+
+.ngx-gallery { display: inline-block; margin-bottom: 20px; }

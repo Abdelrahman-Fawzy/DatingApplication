@@ -1,1 +1,62 @@
-<p>member-details works!</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <img src="{{member.photoUrl}}" class="card-img-top img-thumbnail" alt="{{member.userName}}">
+      <div class="card-body">
+        <div>
+          <strong>Location:</strong>
+          <p>{{member.city}}, {{member.country}}</p>
+        </div>
+        <div>
+          <strong>Age:</strong>
+          <p>{{member.age}}</p>
+        </div>
+        <div>
+          <strong> Last Active: </strong>
+          <p>{{member.lastActive}}</p>
+        </div>
+        <div>
+          <strong>Member Since:</strong>
+          <p>{{member.created}}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="btn-group d-flex">
+          <button class="btn btn-primary">Like</button>
+          <button class="btn btn-success">Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="tab">
+      <button id="defaultOpen" class="tablinks" (click)="openTab($event, 'abouts')">About {{member.knownAs}}</button>
+      <button class="tablinks" (click)="openTab($event, 'interests')">Interests</button>
+      <button class="tablinks" (click)="openTab($event, 'photos')">Photos</button>
+      <button class="tablinks" (click)="openTab($event, 'messages')">Messages</button>
+    </div>
+
+    <div id="abouts" class="tabcontent">
+      <div class="mb-3">
+        <h3>Description</h3>
+        <p>{{member.introduction}}</p>
+      </div>
+      <div>
+        <h3>Looking For</h3>
+        <p>{{member.lookingFor}}</p>
+      </div>
+    </div>
+
+    <div id="interests" class="tabcontent">
+      interests will go there
+    </div>
+
+    <div id="photos" class="tabcontent">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+    </div>
+
+    <div id="messages" class="tabcontent">
+      messages will go there
+    </div>
+  </div>
+</div>
